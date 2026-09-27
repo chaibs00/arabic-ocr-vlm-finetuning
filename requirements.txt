@@ -1,0 +1,8 @@
+pdf2image==1.17.0
+pillow==12.1.0
+transformers
+torch
+tqdm
+litellm==1.73.6
+json-repair
+
