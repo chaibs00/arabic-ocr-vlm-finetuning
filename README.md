@@ -1,6 +1,5 @@
 # Fine-Tuning a Vision-Language Model for Arabic OCR
 
-**Teaching a small open model to read Arabic legal documents, using a large model as its teacher.**
 
 ## Why fine-tune?
 
