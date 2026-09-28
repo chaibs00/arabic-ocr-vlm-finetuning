@@ -3,7 +3,7 @@ import logging
 from utils import convert_pdf_to_images
 
 # Directories saved in config.py :
-from config import PDF_DIR, IMAGE_DIR
+from config import PDFS_DIR, IMAGES_DIR
 
 
 logging.basicConfig(
@@ -15,13 +15,13 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    pdf_files = sorted(PDF_DIR.glob("*.pdf"))
+    pdf_files = sorted(PDFS_DIR.glob("*.pdf"))
 
     if not pdf_files:
-        raise FileNotFoundError(f"No PDFs found in {PDF_DIR}")
+        raise FileNotFoundError(f"No PDFs found in {PDFS_DIR}")
 
     # Log the number of PDFs found
-    logger.info("Found %d PDFs in %s", len(pdf_files), PDF_DIR)
+    logger.info("Found %d PDFs in %s", len(pdf_files), PDFS_DIR)
 
     for pdf_path in pdf_files:
 
@@ -30,7 +30,7 @@ def main():
 
         convert_pdf_to_images(
             pdf_path=pdf_path,
-            output_base_dir=IMAGE_DIR,
+            output_base_dir=IMAGES_DIR,
         )
 
     # Log completion message 

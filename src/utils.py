@@ -4,6 +4,8 @@ from os.path import join
 from glob import glob
 from pdf2image import convert_from_path
 from PIL import Image, ImageEnhance
+import base64
+import json_repair
 
 
 
@@ -80,13 +82,17 @@ def convert_pdf_to_images(pdf_path, output_base_dir, max_width=600):
 
 
 
+def encode_image(image_path):
+    """Read an image and return it as a base64 string."""
+    with open(image_path, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
 
-# data_dir = os.path.join(os.path.dirname(__file__), 'data')
-# pdf_files = f"{data_dir}/pdfs/*.pdf"
-# output_dir = f"{data_dir}/images"
 
 
-# convert_pdf_to_images(
-#     pdf_path = pdf_files,
-#     output_base_dir = output_dir
-# )
+
+def parse_json(text):
+    """Parse JSON text, repairing it if needed. Return None if it fails."""
+    try:
+        return json_repair.loads(text)
+    except Exception:
+        return None
