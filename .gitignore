@@ -7,8 +7,12 @@
 !/data/img/0005/
 /data/img/0005/*
 !/data/img/0005/page_001.jpg
-
-
+!/data/img/0007/
+/data/img/0007/*
+!/data/img/0007/page_001.jpg
+!/data/img/0067/
+/data/img/0067/*
+!/data/img/0067/page_001.jpg
 
 
 # Byte-compiled / optimized / DLL files
